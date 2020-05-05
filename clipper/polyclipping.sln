@@ -3,6 +3,7 @@
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ALL_BUILD", "ALL_BUILD.vcxproj", "{5E771697-BD33-37B1-BF2D-8DBE109321C5}"
 	ProjectSection(ProjectDependencies) = postProject
 		{4275856A-FB9F-3CAE-A7B8-81670DF99388} = {4275856A-FB9F-3CAE-A7B8-81670DF99388}
+		{8993FA0F-59AC-3A0C-8106-7C6067D9586B} = {8993FA0F-59AC-3A0C-8106-7C6067D9586B}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "INSTALL", "INSTALL.vcxproj", "{169C7D61-BA0A-32DF-AFD5-59851AD8137D}"
@@ -13,6 +14,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "INSTALL", "INSTALL.vcxproj"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZERO_CHECK", "..\\ZERO_CHECK.vcxproj", "{4275856A-FB9F-3CAE-A7B8-81670DF99388}"
 	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "polyclipping", "polyclipping.vcxproj", "{8993FA0F-59AC-3A0C-8106-7C6067D9586B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4275856A-FB9F-3CAE-A7B8-81670DF99388} = {4275856A-FB9F-3CAE-A7B8-81670DF99388}
 	EndProjectSection
 EndProject
 Global
@@ -43,9 +49,17 @@ Global
 		{4275856A-FB9F-3CAE-A7B8-81670DF99388}.MinSizeRel|x64.Build.0 = MinSizeRel|x64
 		{4275856A-FB9F-3CAE-A7B8-81670DF99388}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
 		{4275856A-FB9F-3CAE-A7B8-81670DF99388}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
+		{8993FA0F-59AC-3A0C-8106-7C6067D9586B}.Debug|x64.ActiveCfg = Debug|x64
+		{8993FA0F-59AC-3A0C-8106-7C6067D9586B}.Debug|x64.Build.0 = Debug|x64
+		{8993FA0F-59AC-3A0C-8106-7C6067D9586B}.Release|x64.ActiveCfg = Release|x64
+		{8993FA0F-59AC-3A0C-8106-7C6067D9586B}.Release|x64.Build.0 = Release|x64
+		{8993FA0F-59AC-3A0C-8106-7C6067D9586B}.MinSizeRel|x64.ActiveCfg = MinSizeRel|x64
+		{8993FA0F-59AC-3A0C-8106-7C6067D9586B}.MinSizeRel|x64.Build.0 = MinSizeRel|x64
+		{8993FA0F-59AC-3A0C-8106-7C6067D9586B}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
+		{8993FA0F-59AC-3A0C-8106-7C6067D9586B}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8733222D-E069-3DBD-B436-95FFD2D88BF8}
+		SolutionGuid = {99472B5F-6D01-30CB-8576-D730CD070352}
 	EndGlobalSection
 	GlobalSection(ExtensibilityAddIns) = postSolution
 	EndGlobalSection

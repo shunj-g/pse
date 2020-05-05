@@ -1,0 +1,13 @@
+prefix=C:/Program Files (x86)/pse
+exec_prefix=C:/Program Files (x86)/pse
+libdir=C:/Program Files (x86)/pse/lib
+sharedlibdir=C:/Program Files (x86)/pse/lib
+includedir=C:/Program Files (x86)/pse/include/polyclipping
+
+Name: polyclipping
+Description: polygon clipping library
+Version: 
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lpolyclipping
+Cflags: -I${includedir}
