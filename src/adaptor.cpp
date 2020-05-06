@@ -33,13 +33,11 @@ namespace lanms_adaptor {
 
     vector<vector<int>> growing_text_line(vector<Mat> kernals) {
         int th1 = 10;
-        // int th1 = 0;
-        // Mat text_line = Mat::zeros(kernals[0].size(), CV_32SC1);
 
         Mat label_mat;
-        int label_num = connectedComponents(kernals[kernals.size() - 1], label_mat, 4);
+        long label_num = connectedComponents(kernals[kernals.size() - 1], label_mat, 4);
 
-        vector<int> area(label_num + 1);
+        vector<long> area(label_num + 1);
         //memset(area, 0, sizeof(area));
         for (int x = 0; x < label_mat.rows; ++x) {
             for (int y = 0; y < label_mat.cols; ++y) {
@@ -65,7 +63,6 @@ namespace lanms_adaptor {
                 }
                 Point point(x, y);
                 queue.push(point);
-                // text_line.at<int>(x, y) = label;
                 row.emplace_back(label);
             }
             text_line.emplace_back(row);
@@ -81,7 +78,6 @@ namespace lanms_adaptor {
                 Point point = queue.front(); queue.pop();
                 int x = point.x;
                 int y = point.y;
-                // int label = text_line.at<int>(x, y);
                 int label = text_line[x][y];
 
                 bool is_edge = true;
@@ -99,47 +95,10 @@ namespace lanms_adaptor {
                     text_line[tmp_x][tmp_y] = label;
                     is_edge = false;
                 }
-
                 if (is_edge) {
                     next_queue.push(point);
                 }
             }
-
-            /*
-            label_num = connectedComponents(kernals[kernal_id], label_mat, 4);
-
-            int area[label_num + 1];
-            memset(area, 0, sizeof(area));
-            for (int x = 0; x < label_mat.rows; ++x) {
-                for (int y = 0; y < label_mat.cols; ++y) {
-                    int label = label_mat.at<int>(x, y);
-                    if (label == 0) continue;
-                    area[label] += 1;
-                }
-            }
-
-            for (int x = 0; x < label_mat.rows; ++x) {
-                for (int y = 0; y < label_mat.cols; ++y) {
-                    int label = label_mat.at<int>(x, y);
-                    if (label == 0) continue;
-                    if (area[label] < th1) continue;
-                    if (text_line.at<int>(x, y) > 0) continue;
-                    text_line.at<int>(x, y) = label + bias;
-                }
-            }
-            bias += label_num;
-            */
-
-            /*
-            for (int x = 0; x < text_line.rows; ++x) {
-                for (int y = 0; y < text_line.cols; ++y) {
-                    if (text_line.at<int>(x, y) == 0) continue;
-                    Point point(x, y);
-                    queue.push(point);
-                }
-            }
-            */
-
             swap(queue, next_queue);
         }
 
@@ -154,16 +113,6 @@ namespace lanms_adaptor {
         vector<Mat> kernals = get_kernals(data, buf.shape);
 
         vector<vector<int>> text_line = growing_text_line(kernals);
-
-        // cout << _text_line << endl;
-        // vector<vector<int>> text_line;
-        // for (int x = 0; x < _text_line.rows; ++x) {
-        //     vector<int> row;
-        //     for (int y = 0; y < _text_line.cols; ++y) {
-        //         row.emplace_back(_text_line.at<int>(x, y));
-        //     }
-        //     text_line.emplace_back(row);
-        // }
 
         return text_line;
     }
