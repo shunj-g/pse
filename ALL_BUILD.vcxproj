@@ -12,14 +12,6 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="MinSizeRel|x64">
-      <Configuration>MinSizeRel</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="RelWithDebInfo|x64">
-      <Configuration>RelWithDebInfo</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5E771697-BD33-37B1-BF2D-8DBE109321C5}</ProjectGuid>
@@ -40,16 +32,6 @@
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
-    <ConfigurationType>Utility</ConfigurationType>
-    <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
-    <ConfigurationType>Utility</ConfigurationType>
-    <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
-  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
@@ -61,12 +43,10 @@
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\opencv\build\include\opencv2;E:\opencv\build\include\opencv;E:\opencv\build\include;E:\shunj-g\OCR\OCR_IMP\pse\include\clipper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -76,27 +56,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
-      <HeaderFileName>%(Filename).h</HeaderFileName>
-      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
-      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
-    </Midl>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
-    <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
-      <HeaderFileName>%(Filename).h</HeaderFileName>
-      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
-      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
-    </Midl>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
-    <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\opencv\build\include\opencv2;E:\opencv\build\include\opencv;E:\opencv\build\include;E:\shunj-g\OCR\OCR_IMP\pse\include\clipper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -132,32 +92,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;E:\shunj-g\OCR\OCR_IMP\pse\CMakeFiles\3.17.1\CMakeCCompiler.cmake;E:\shunj-g\OCR\OCR_IMP\pse\CMakeFiles\3.17.1\CMakeCXXCompiler.cmake;E:\shunj-g\OCR\OCR_IMP\pse\CMakeFiles\3.17.1\CMakeRCCompiler.cmake;E:\shunj-g\OCR\OCR_IMP\pse\CMakeFiles\3.17.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\shunj-g\OCR\OCR_IMP\pse\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/shunj-g/OCR/OCR_IMP/pse/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\bin\cmake.exe -SE:/shunj-g/OCR/OCR_IMP/pse -BE:/shunj-g/OCR/OCR_IMP/pse --check-stamp-file E:/shunj-g/OCR/OCR_IMP/pse/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;E:\shunj-g\OCR\OCR_IMP\pse\CMakeFiles\3.17.1\CMakeCCompiler.cmake;E:\shunj-g\OCR\OCR_IMP\pse\CMakeFiles\3.17.1\CMakeCXXCompiler.cmake;E:\shunj-g\OCR\OCR_IMP\pse\CMakeFiles\3.17.1\CMakeRCCompiler.cmake;E:\shunj-g\OCR\OCR_IMP\pse\CMakeFiles\3.17.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\shunj-g\OCR\OCR_IMP\pse\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/shunj-g/OCR/OCR_IMP/pse/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\bin\cmake.exe -SE:/shunj-g/OCR/OCR_IMP/pse -BE:/shunj-g/OCR/OCR_IMP/pse --check-stamp-file E:/shunj-g/OCR/OCR_IMP/pse/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;E:\shunj-g\OCR\OCR_IMP\pse\CMakeFiles\3.17.1\CMakeCCompiler.cmake;E:\shunj-g\OCR\OCR_IMP\pse\CMakeFiles\3.17.1\CMakeCXXCompiler.cmake;E:\shunj-g\OCR\OCR_IMP\pse\CMakeFiles\3.17.1\CMakeRCCompiler.cmake;E:\shunj-g\OCR\OCR_IMP\pse\CMakeFiles\3.17.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\shunj-g\OCR\OCR_IMP\pse\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -168,10 +102,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </ProjectReference>
-    <ProjectReference Include="E:\shunj-g\OCR\OCR_IMP\pse\clipper\polyclipping.vcxproj">
-      <Project>{8993FA0F-59AC-3A0C-8106-7C6067D9586B}</Project>
-      <Name>polyclipping</Name>
     </ProjectReference>
     <ProjectReference Include="E:\shunj-g\OCR\OCR_IMP\pse\pse.vcxproj">
       <Project>{4BBBD76D-D40D-379A-818F-0377F1965D2B}</Project>

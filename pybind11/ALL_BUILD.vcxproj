@@ -12,14 +12,6 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="MinSizeRel|x64">
-      <Configuration>MinSizeRel</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="RelWithDebInfo|x64">
-      <Configuration>RelWithDebInfo</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5E771697-BD33-37B1-BF2D-8DBE109321C5}</ProjectGuid>
@@ -40,16 +32,6 @@
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
-    <ConfigurationType>Utility</ConfigurationType>
-    <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
-    <ConfigurationType>Utility</ConfigurationType>
-    <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
-  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
@@ -61,8 +43,6 @@
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
@@ -75,26 +55,6 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
-      <HeaderFileName>%(Filename).h</HeaderFileName>
-      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
-      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
-    </Midl>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
-    <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
-      <HeaderFileName>%(Filename).h</HeaderFileName>
-      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
-      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
-    </Midl>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <Midl>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
@@ -132,32 +92,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakePackageConfigHelpers.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeParseArguments.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CheckCXXCompilerFlag.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CheckCXXSourceCompiles.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\FindPackageMessage.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\FindPythonInterp.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\GNUInstallDirs.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\WriteBasicConfigVersionFile.cmake;E:\shunj-g\OCR\OCR_IMP\pse\pybind11\tools\FindPythonLibsNew.cmake;E:\shunj-g\OCR\OCR_IMP\pse\pybind11\tools\pybind11Tools.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\shunj-g\OCR\OCR_IMP\pse\pybind11\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/shunj-g/OCR/OCR_IMP/pse/pybind11/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\bin\cmake.exe -SE:/shunj-g/OCR/OCR_IMP/pse -BE:/shunj-g/OCR/OCR_IMP/pse --check-stamp-file E:/shunj-g/OCR/OCR_IMP/pse/pybind11/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakePackageConfigHelpers.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeParseArguments.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CheckCXXCompilerFlag.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CheckCXXSourceCompiles.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\FindPackageMessage.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\FindPythonInterp.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\GNUInstallDirs.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\WriteBasicConfigVersionFile.cmake;E:\shunj-g\OCR\OCR_IMP\pse\pybind11\tools\FindPythonLibsNew.cmake;E:\shunj-g\OCR\OCR_IMP\pse\pybind11\tools\pybind11Tools.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\shunj-g\OCR\OCR_IMP\pse\pybind11\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/shunj-g/OCR/OCR_IMP/pse/pybind11/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\bin\cmake.exe -SE:/shunj-g/OCR/OCR_IMP/pse -BE:/shunj-g/OCR/OCR_IMP/pse --check-stamp-file E:/shunj-g/OCR/OCR_IMP/pse/pybind11/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakePackageConfigHelpers.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CMakeParseArguments.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CheckCXXCompilerFlag.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\CheckCXXSourceCompiles.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\FindPackageMessage.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\FindPythonInterp.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\GNUInstallDirs.cmake;C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\cmake\data\share\cmake-3.17\Modules\WriteBasicConfigVersionFile.cmake;E:\shunj-g\OCR\OCR_IMP\pse\pybind11\tools\FindPythonLibsNew.cmake;E:\shunj-g\OCR\OCR_IMP\pse\pybind11\tools\pybind11Tools.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\shunj-g\OCR\OCR_IMP\pse\pybind11\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

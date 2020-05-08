@@ -1,0 +1,14 @@
+# Package Information for pkg-config
+
+prefix=C:/Program Files (x86)/pse
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir_old=${prefix}/include/opencv
+includedir_new=${prefix}/include
+
+Name: OpenCV
+Description: Open Source Computer Vision Library
+Version: 3.1.0
+Libs: -L${exec_prefix}/lib -lopencv_cudabgsegm310 -lopencv_cudaobjdetect310 -lopencv_cudastereo310 -lopencv_shape310 -lopencv_stitching310 -lopencv_cudafeatures2d310 -lopencv_superres310 -lopencv_cudacodec310 -lopencv_videostab310 -lippicvmt -lopencv_cudaoptflow310 -lopencv_cudalegacy310 -lopencv_calib3d310 -lopencv_features2d310 -lopencv_objdetect310 -lopencv_highgui310 -lopencv_videoio310 -lopencv_photo310 -lopencv_imgcodecs310 -lopencv_cudawarping310 -lopencv_cudaimgproc310 -lopencv_cudafilters310 -lopencv_video310 -lopencv_ml310 -lopencv_imgproc310 -lopencv_flann310 -lopencv_cudaarithm310 -lopencv_core310 -lopencv_cudev310
+Libs.private: -lcomctl32 -lgdi32 -lole32 -lsetupapi -lws2_32 -lvfw32 -lcudart -lnppc -lCUDA_nppi_LIBRARY-NOTFOUND -lnpps -lcufft -L-LC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.2/lib -lx64
+Cflags: -I${includedir_old} -I${includedir_new}

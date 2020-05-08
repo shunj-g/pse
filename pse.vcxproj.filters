@@ -6,9 +6,17 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="E:\shunj-g\OCR\OCR_IMP\pse\include\lanms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
     <CustomBuild Include="E:\shunj-g\OCR\OCR_IMP\pse\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7C2AF7B0-F133-3767-8FAD-B447EE058651}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{3A840001-3E82-3FA7-93E0-4F4779D2A62C}</UniqueIdentifier>
     </Filter>

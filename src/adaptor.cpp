@@ -16,9 +16,8 @@ using namespace cv;
 
 namespace py = pybind11;
 
-namespace lanms_adaptor {
-    vector<Mat> get_kernals(const int* data, vector<py::ssize_t> data_shape) {// none gcc should be ssise_t for py
-        vector<Mat> kernals;
+namespace pse_adaptor {
+    void get_kernals(const int* data, vector<py::ssize_t> data_shape, vector<Mat>& kernals) {
         for (int i = 0; i < data_shape[0]; ++i) {
             Mat kernal = Mat::zeros(data_shape[1], data_shape[2], CV_8UC1);
             for (int x = 0; x < kernal.rows; ++x) {
@@ -28,17 +27,17 @@ namespace lanms_adaptor {
             }
             kernals.emplace_back(kernal);
         }
-        return kernals;
     }
 
-    vector<vector<int>> growing_text_line(vector<Mat> kernals) {
-        int th1 = 10;
+    void growing_text_line(vector<Mat>& kernals, vector<vector<int>>& text_line, float min_area) {
 
         Mat label_mat;
-        long label_num = connectedComponents(kernals[kernals.size() - 1], label_mat, 4);
+        int label_num = connectedComponents(kernals[kernals.size() - 1], label_mat, 4);
 
-        vector<long> area(label_num + 1);
-        //memset(area, 0, sizeof(area));
+        // cout << "label num: " << label_num << endl;
+
+        vector<int> area(label_num + 1);
+
         for (int x = 0; x < label_mat.rows; ++x) {
             for (int y = 0; y < label_mat.cols; ++y) {
                 int label = label_mat.at<int>(x, y);
@@ -47,28 +46,23 @@ namespace lanms_adaptor {
             }
         }
 
-        vector<vector<int>> text_line;
         queue<Point> queue, next_queue;
         for (int x = 0; x < label_mat.rows; ++x) {
-            vector<int> row;
+            vector<int> row(label_mat.cols);
             for (int y = 0; y < label_mat.cols; ++y) {
                 int label = label_mat.at<int>(x, y);
-                if (label == 0) {
-                    row.emplace_back(0);
-                    continue;
-                }
-                if (area[label] < th1) {
-                    row.emplace_back(0);
-                    continue;
-                }
+
+                if (label == 0) continue;
+                if (area[label] < min_area) continue;
+
                 Point point(x, y);
                 queue.push(point);
-                row.emplace_back(label);
+                row[y] = label;
             }
             text_line.emplace_back(row);
         }
 
-        // cout << text_line << endl;
+        // cout << "ok" << endl;
 
         int dx[] = { -1, 1, 0, 0 };
         int dy[] = { 0, 0, -1, 1 };
@@ -79,6 +73,7 @@ namespace lanms_adaptor {
                 int x = point.x;
                 int y = point.y;
                 int label = text_line[x][y];
+                // cout << text_line.size() << ' ' << text_line[0].size() << ' ' << x << ' ' << y << endl;
 
                 bool is_edge = true;
                 for (int d = 0; d < 4; ++d) {
@@ -95,34 +90,54 @@ namespace lanms_adaptor {
                     text_line[tmp_x][tmp_y] = label;
                     is_edge = false;
                 }
+
                 if (is_edge) {
                     next_queue.push(point);
                 }
             }
             swap(queue, next_queue);
         }
-
-        // cout << text_line << endl;
-
-        return text_line;
     }
 
-    vector<vector<int>> merge_quadrangle_n9(py::array_t<long, py::array::c_style | py::array::forcecast> quad_n9) {
+    vector<vector<int>> pse(py::array_t<int, py::array::c_style | py::array::forcecast> quad_n9, float min_area) {
         auto buf = quad_n9.request();
         auto data = static_cast<int*>(buf.ptr);
-        vector<Mat> kernals = get_kernals(data, buf.shape);
+        vector<Mat> kernals;
+        get_kernals(data, buf.shape, kernals);
 
-        vector<vector<int>> text_line = growing_text_line(kernals);
+        // cout << "min_area: " << min_area << endl;
+        // for (int i = 0; i < kernals.size(); ++i) {
+        //     cout << "kernal" << i <<" shape: " << kernals[i].rows << ' ' << kernals[i].cols << endl;
+        // }
+
+        vector<vector<int>> text_line;
+        growing_text_line(kernals, text_line, min_area);
 
         return text_line;
     }
 }
+/*PYBIND11_MODULE(adaptor, m) {
+    m.def("get_kernals", &pse_adaptor::get_kernals, "get_kernals");
+    m.def("growing_text_line", &pse_adaptor::growing_text_line, "growing_text_line");
+    m.def("pse", &pse_adaptor::pse, "pse");
+
+    m.def("pse", [](py::array_t<int, py::array::c_style | py::array::forcecast> quad_n9, float min_area) { 
+        auto buf = quad_n9.request();
+        auto data = static_cast<int*>(buf.ptr);
+        vector<Mat> kernals;
+        pse_adaptor::get_kernals(data, buf.shape, kernals);
+
+        vector<vector<int>> text_line;
+        pse_adaptor::growing_text_line(kernals, text_line, min_area);
+
+        return text_line; }, R"pbdoc(pse.)pbdoc");
+}*/
+
 
 PYBIND11_PLUGIN(adaptor) {
-    py::module m("adaptor", "NMS");
+    py::module m("adaptor", "pse");
 
-    m.def("merge_quadrangle_n9", &lanms_adaptor::merge_quadrangle_n9, "merge quadrangels");
+    m.def("pse", &pse_adaptor::pse, "pse");
 
     return m.ptr();
 }
-

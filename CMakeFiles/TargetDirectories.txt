@@ -1,9 +1,6 @@
+E:/shunj-g/OCR/OCR_IMP/pse/CMakeFiles/PACKAGE.dir
 E:/shunj-g/OCR/OCR_IMP/pse/CMakeFiles/pse.dir
-E:/shunj-g/OCR/OCR_IMP/pse/CMakeFiles/INSTALL.dir
 E:/shunj-g/OCR/OCR_IMP/pse/CMakeFiles/ALL_BUILD.dir
 E:/shunj-g/OCR/OCR_IMP/pse/CMakeFiles/ZERO_CHECK.dir
-E:/shunj-g/OCR/OCR_IMP/pse/pybind11/CMakeFiles/INSTALL.dir
+E:/shunj-g/OCR/OCR_IMP/pse/pybind11/CMakeFiles/PACKAGE.dir
 E:/shunj-g/OCR/OCR_IMP/pse/pybind11/CMakeFiles/ALL_BUILD.dir
-E:/shunj-g/OCR/OCR_IMP/pse/clipper/CMakeFiles/polyclipping.dir
-E:/shunj-g/OCR/OCR_IMP/pse/clipper/CMakeFiles/INSTALL.dir
-E:/shunj-g/OCR/OCR_IMP/pse/clipper/CMakeFiles/ALL_BUILD.dir

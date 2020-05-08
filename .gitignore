@@ -101,6 +101,9 @@ ipch/
 *.cachefile
 *.VC.db
 *.VC.VC.opendb
+*.lib
+*.exp
+*.pyd
 
 # Visual Studio profiler
 *.psess

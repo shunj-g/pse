@@ -35,7 +35,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("E:/shunj-g/OCR/OCR_IMP/pse/pybind11/cmake_install.cmake")
-  include("E:/shunj-g/OCR/OCR_IMP/pse/clipper/cmake_install.cmake")
 
 endif()
 
